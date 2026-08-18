@@ -1,0 +1,29 @@
+{
+  "name": "kubeforge-api",
+  "version": "1.0.0",
+  "description": "KubeForge REST API",
+  "homepage": "https://github.com/nvharish/kubeforge#readme",
+  "bugs": {
+    "url": "https://github.com/nvharish/kubeforge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvharish/kubeforge.git"
+  },
+  "license": "ISC",
+  "author": "N V Harish <nvharrish@gmail.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.1",
+    "globals": "^17.11.0"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
