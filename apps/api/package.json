@@ -1,6 +1,6 @@
 {
   "name": "kubeforge-api",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "KubeForge REST API",
   "homepage": "https://github.com/nvharish/kubeforge#readme",
   "bugs": {
