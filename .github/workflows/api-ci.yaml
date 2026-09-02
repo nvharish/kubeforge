@@ -19,13 +19,11 @@ defaults:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # Crucial for pushing the new tag
+    runs-on: self-hosted
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x, 24.x]
+        node-version: [24.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:

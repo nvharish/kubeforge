@@ -7,25 +7,23 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
-  web:
-    build:
-      context: apps/web
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    environment:
-      - NODE_ENV=development
   sonarqube:
-    image: sonarqube:latest
+    image: dhi.io/sonarqube:26
     ports:
       - "9000:9000"
     environment:
-      - SONARQUBE_JDBC_URL=jdbc:postgresql://sonar-db:5432/sonar
+      - SONARQUBE_JDBC_URL=jdbc:postgresql://sonardb:5432/sonardb
       - SONARQUBE_JDBC_USERNAME=sonar
       - SONARQUBE_JDBC_PASSWORD=sonar
-  sonar-db:
-    image: postgres:latest
+  sonardb:
+    image: dhi.io/postgres:18-alpine
     environment:
       - POSTGRES_USER=sonar
       - POSTGRES_PASSWORD=sonar
-      - POSTGRES_DB=sonar
+      - POSTGRES_DB=sonardb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    shm_size: 128mb
+
+volumes:
+  postgres_data:
